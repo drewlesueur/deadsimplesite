@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      var name
+      var run = function () {
+        name = location.toString().split("/")[3]
+        console.log(name)
+        document.getElementById("name").value = name
+      }
+    </script>
+  </head>
+  <body onload="run()">
+    <h1>DeadSimpleSite.com - Make a dead simple site.</h1>
+    <div>Fill out this info and you will get a free site for 30 days
+      <br /> All information is optional.
+    </div>
+    <form action="/generate" method="POST">
+      <input type="hidden" name="name" id="name">
+    <table>
+      <tr>
+        <td>
+          Heading
+        </td>
+        <td>
+          <input type="text" name="heading" placeholder="eg. Bobs Auto Repair">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Phone number
+        </td>
+        <td>
+          <input type="text" name="phone" placeholder="eg. 480-555-4455">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          image link 
+        </td>
+        <td>
+          <input type="text" name="image" placeholder="http://flickr.com/mypic1234">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          text
+        </td>
+        <td>
+          <textarea style="width: 300px; height: 100px;" name="text"></textarea>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="Generate Site" />
+    </form>
+  </body>
+</html>

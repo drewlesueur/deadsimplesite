@@ -1,0 +1,57 @@
+express Require $express
+fs Require $fs
+
+app Express.createServer
+
+App.configure *
+  bp Express.bodyParser
+  App.use bp
+
+App.get $/thumbs.js * req res
+  Res.sendfile $thumbs.js
+
+App.get $/ * req res
+  Res.sendfile $index.html
+
+
+App.get $/:name/edit * req res
+  name Req.param $name
+  name Lower name
+  Res.sendfile $ editsite.html
+
+App.post $/generate * req res
+  name Req.param $name
+  name OneWord name
+  name Lower name
+  phone Req.param $phone
+  heading Req.param $heading
+  image Req.param $image
+  text Req.param $text
+  html $
+    <!doctype html>
+    <html>
+    <head>
+    </head>
+    <body>
+    <h1>$heading $phone</h1> 
+    <img src="$image" />
+    <div>$text</div>
+    <div style="font-size: 10px; position: absolute; bottom: 0; right: 0"> 
+    Made by <a href="http://deadsimplesite.com">deadsimplesite.com</a>. Questions? Ask on <a href="http://twitter.com/deadsimplesite">twitter</a>
+    </div>
+    </body>
+    </html>
+  file $ ./sites/$name.html
+  Say file
+  Fs.writeFile file html * err
+    Say $ wrote a file
+    Say err
+    Res.redirect $ /$name
+
+App.get $/:name * req res
+  name Req.param $name
+  name Lower name
+
+  Res.sendfile $ ./sites/$name.html
+
+App.listen 8020

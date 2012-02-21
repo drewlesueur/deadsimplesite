@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<title>Make a dead simple site</title>
+<h1>DeadSimpleSite.com - Make a dead simple site.</h1>
+<em>So simple it's almost embarrassing.</em>
+<br  />
+<br  />
+<form id="form" action="edit" method="get">
+  What do you want your url to be? 
+  <br />
+  <code>http://deadsimplesite.com/<input id="name" type="text" name="name" placeholder="bobsauto"/></code> 
+  <input type="submit" value="Make Site">
+</form>
+<script src="thumbs.js"> </script>
+<script>
+Thumbs.addScope({
+  oneword: function (name) {
+    return name.replace(/[^\w]/g, "") 
+  }
+})
+</script>
+<script type="text/x-thumbs">
+nameEl Document.getElementById $name
+form Document.getElementById $form
+form.onsubmit * 
+  name nameEl.value
+  name OneWord name 
+  location.href $ http://deadsimplesite.com/$name/edit
+  false
+</script>
+<script>
+Thumbs.runScriptTags()
+</script>
+</body>
+</html>
